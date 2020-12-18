@@ -1,0 +1,15 @@
+{
+    "name": "dunglas/stripe-invoice-exporter",
+    "description": "Download all your Stripe PDF invoices",
+    "type": "project",
+    "require": {
+        "stripe/stripe-php": "^7.67"
+    },
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Kévin Dunglas",
+            "email": "dunglas@gmail.com"
+        }
+    ]
+}
