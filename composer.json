@@ -3,6 +3,7 @@
     "description": "Download all your Stripe PDF invoices",
     "type": "project",
     "require": {
+        "ext-curl": "*",
         "stripe/stripe-php": "^7.67"
     },
     "license": "AGPL",

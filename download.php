@@ -27,7 +27,15 @@ foreach ($invoices->autoPagingIterator() as $invoice) {
     }
 
     echo sprintf("Downloading %s..." . PHP_EOL, $invoice->invoice_pdf);
-    file_put_contents($path, file_get_contents($invoice->invoice_pdf));
+    $fp = fopen($path, 'w');
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $invoice->invoice_pdf);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_FILE, $fp);
+
+    curl_exec($ch);
+    fclose($fp);
 }
 
 echo "Done!" . PHP_EOL;
