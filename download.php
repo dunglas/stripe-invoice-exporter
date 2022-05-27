@@ -22,12 +22,12 @@ switch ($option) {
     $invoices = $stripe->invoices->all(['limit' => 100]);
     break;
   case "2":
-    $a = readline('Enter an invoice ID. Only invoices after this one will be retrieved: ');
-    $invoices = $stripe->invoices->all(['limit' => 100, 'starting_after' => $a]);
+    $invoice_index = readline('Enter an invoice ID. Only invoices after this one will be retrieved: ');
+    $invoices = $stripe->invoices->all(['limit' => 100, 'starting_after' => $invoice_index]);
     break;
   case "3":
-    $a = readline('Enter an invoice ID. Only invoices before this one will be retrieved: ');
-    $invoices = $stripe->invoices->all(['limit' => 100, 'ending_before' => $a]);
+    $invoice_index = readline('Enter an invoice ID. Only invoices before this one will be retrieved: ');
+    $invoices = $stripe->invoices->all(['limit' => 100, 'ending_before' => $invoice_index]);
     break;
 }
 
